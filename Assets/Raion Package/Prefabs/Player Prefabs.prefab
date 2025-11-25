@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &358104744972245118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6515127140445620616}
+  m_Layer: 0
+  m_Name: Shooting Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6515127140445620616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358104744972245118}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.87, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4617918976952599409}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3885525143259132117
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,9 +133,10 @@ GameObject:
   - component: {fileID: 3572876352016091617}
   - component: {fileID: 5553415666824081656}
   - component: {fileID: 5991373839330956123}
+  - component: {fileID: 3600045555852912455}
   m_Layer: 0
   m_Name: Player Prefabs
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,6 +155,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5264430331227741719}
+  - {fileID: 6515127140445620616}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3572876352016091617
@@ -210,5 +243,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04cc6c91ff9eaf46a89617b1083e0dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movements
-  speed: 15
+  speed: 8.25
   gameOverCanvas: {fileID: 0}
+--- !u!114 &3600045555852912455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4934086027296063344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d4b6d7b5c314d419cf421d95855347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ply_Shoot
+  shootInterval: 0.25
+  bulletPrefab: {fileID: 7650426894327364767, guid: d01c46c03e07bdc4e8467b49f8d26658, type: 3}
+  shootingPoint: {fileID: 6515127140445620616}
+  maxEnergy: 500
+  rocketPrefab: {fileID: 6212811876994818287, guid: a11e0398666c9104c97f6f86adba2640, type: 3}
+  currentEnergy: 0
+  SkillCD: 0.75
+  skillCost: 100
+  nextSkill: 0

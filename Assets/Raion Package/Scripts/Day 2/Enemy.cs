@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float moveSpeed = 3f;
+    public float moveSpeed;
     public float fireRate = 2f;
     private float fireCountdown = 0f;
     private Vector3 lastDirection = Vector3.up;
@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     void Update()
     {
-        transform.Translate(Vector3.left * Time.deltaTime);
+        transform.Translate(Vector3.left * Time.deltaTime*moveSpeed);
         fireCountdown += Time.deltaTime;
         if (fireCountdown >= fireRate)
         {
