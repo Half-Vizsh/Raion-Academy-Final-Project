@@ -34,7 +34,7 @@ public class Movements : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Isi kode disini
-        if (other.gameObject.CompareTag("Enemy")||other.gameObject.CompareTag("Enemy Bullet"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy Bullet") || other.gameObject.CompareTag("Asteroids") || other.gameObject.CompareTag("UFO"))
         {
             Time.timeScale = 0f; //Freezing time
             if (gameOverCanvas != null)
@@ -44,8 +44,5 @@ public class Movements : MonoBehaviour
             }
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
+
 }

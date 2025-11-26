@@ -4,6 +4,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject EnemyPrefab;
     public GameObject AsteroidsPrefab;
+    public GameObject UfosPrefab;
     public float SpawnInterval = 4f;
     public float MediumSpawnInterval = 3f;
     public float HardSpawnInterval = 1.5f;
@@ -45,6 +46,7 @@ public class Spawner : MonoBehaviour
         {
             SpawnEnemy();
             SpawnAsteroids();
+            SpawnUFOs();
         }
         else if(TimeDifficult >= MediumDifficultTime)
         {
@@ -84,5 +86,19 @@ public class Spawner : MonoBehaviour
         // untuk melakukan spawning dapat menggunakan Instantiate() method,
         // Instantiation memiliki parameter game object, vector3, dan Quaternion
         GameObject asteroids = Instantiate(AsteroidsPrefab, spawnPosition, Quaternion.identity);
+    }
+
+    void SpawnUFOs()
+    {
+        if(UfosPrefab == null)
+        {
+            Debug.Log("Prefab Asteroid null");
+            return;
+        }
+        float RandomY = Random.Range(-spawnBoundaryY,spawnBoundaryY);
+        Vector3 spawnPosition = new Vector3(spawnBoundaryX,RandomY,0f);
+        // untuk melakukan spawning dapat menggunakan Instantiate() method,
+        // Instantiation memiliki parameter game object, vector3, dan Quaternion
+        GameObject ufos = Instantiate(UfosPrefab, spawnPosition, Quaternion.identity);
     }
 }
