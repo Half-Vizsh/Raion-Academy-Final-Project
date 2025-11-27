@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1682d37dee33d3469ff29140809b09b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ply_Health
-  Maxhp: 100
+  Maxhp: 60
   gameOverCanvas: {fileID: 0}
   sprite: {fileID: 2982457469736453413}
   invincibleDuration: 3

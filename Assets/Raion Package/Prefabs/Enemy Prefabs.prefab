@@ -226,5 +226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e526a31662bcc0f46a6de3468517faa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  enemyScoreValue: 10
   enemyHealth: 0
   maxEnemyHP: 50

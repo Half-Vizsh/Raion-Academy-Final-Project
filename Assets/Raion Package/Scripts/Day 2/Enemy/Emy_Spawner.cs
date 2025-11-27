@@ -25,18 +25,18 @@ public class Emy_Spawner : MonoBehaviour
     void Update()
     {
         currentScore = ScoreSystem.ScoreValue;
-        if (currentScore >= 750)
+        if (currentScore >= 300)
         {
             currentRound = 3;
-            SpawnInterval = 1f;
-        } else if (currentScore>=300)
+            SpawnInterval = 0.75f;
+        } else if (currentScore>=100)
         {
             currentRound = 2;
-            SpawnInterval = 2.5f;
+            SpawnInterval = 1.5f;
         } else
         {
             currentRound = 1;
-            SpawnInterval = 4f;
+            SpawnInterval = 3f;
         }
 
         if (Time.time>=NextSpawn)
@@ -57,6 +57,7 @@ public class Emy_Spawner : MonoBehaviour
                 break;
             case 1:
             Instantiate(AsteroidPrefab, spawnPos, Quaternion.identity);
+            NextSpawn -= 1.5f;
                 break;
             case 2:
             Instantiate(UFOSPrefab, spawnPos, Quaternion.identity);
