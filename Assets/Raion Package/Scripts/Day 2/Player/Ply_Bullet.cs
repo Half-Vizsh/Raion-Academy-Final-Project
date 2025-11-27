@@ -6,7 +6,7 @@ public class Ply_Bullet : MonoBehaviour
     [SerializeField] Rigidbody2D bulRb;
     [SerializeField] float lifeTime;
     [SerializeField] float energyPerBullet;
-    [SerializeField] int damage;    
+    public int damage;    
     private GameObject playerScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

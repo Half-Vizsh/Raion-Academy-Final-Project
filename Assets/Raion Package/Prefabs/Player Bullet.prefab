@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 481454089691597668}
   m_Layer: 0
   m_Name: Player Bullet
-  m_TagString: Untagged
+  m_TagString: Player Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,4 +214,4 @@ MonoBehaviour:
   bulRb: {fileID: 2975593317809266985}
   lifeTime: 3
   energyPerBullet: 10
-  damage: 10
+  damage: 100

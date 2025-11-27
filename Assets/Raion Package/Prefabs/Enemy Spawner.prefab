@@ -44,7 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34b33536dc4c9048982b44399c35648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
-  enemyPrefab: {fileID: 6506338317644164475, guid: e054a60ae8026c149b705b2d3c8f8687, type: 3}
-  spawnInterval: 3
-  spawnBoundY: 4
-  spawnPosX: 9.5
+  EnemyPrefab: {fileID: 6506338317644164475, guid: e054a60ae8026c149b705b2d3c8f8687, type: 3}
+  AsteroidsPrefab: {fileID: 7545399467048618252, guid: 668a86d3d8c09994b81e4f7722180796, type: 3}
+  UfosPrefab: {fileID: 5600177283299589347, guid: f861fcb343882eb4fbeb8be36ca08801, type: 3}
+  SpawnInterval: 4
+  MediumSpawnInterval: 3
+  HardSpawnInterval: 1.5
+  spawnBoundaryY: 9
+  spawnBoundaryX: 8
