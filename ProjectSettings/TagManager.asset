@@ -9,6 +9,8 @@ TagManager:
   - Obstacle
   - Wall
   - Ground
+  - Asteroids
+  - UFO
   layers:
   - Default
   - TransparentFX
