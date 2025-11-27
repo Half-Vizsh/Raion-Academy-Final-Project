@@ -48,7 +48,7 @@ public class Ply_Health : MonoBehaviour
     IEnumerator PlayerDamageEffect()
     {
         isInvincible = true;
-
+        //Bikin sprite kelap kelip
         if (sprite != null)
         {
             for (int i = 0; i < 4; i++)

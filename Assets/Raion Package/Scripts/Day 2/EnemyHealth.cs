@@ -37,5 +37,21 @@ public class EnemyHealth : MonoBehaviour
                 }
             }
         }
+         if (collision.gameObject.CompareTag("Player Rocket"))
+        {
+            Ply_Rocket rocket = collision.gameObject.GetComponent<Ply_Rocket>();
+            if(rocket != null)
+            {
+                enemyHealth -= rocket.damage;
+                Debug.Log("Damage = " + rocket.damage + ", Enemy HP = " + enemyHealth);
+                
+                if(enemyHealth <= 0)
+                {
+                    ScoreSystem.ScoreValue += enemyScoreValue;
+                    Debug.Log("Enemy destroyed! HP was: " + enemyHealth);
+                    Destroy(gameObject);
+                }
+            }
+        }
     }   
 }

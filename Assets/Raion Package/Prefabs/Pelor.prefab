@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4302901735110803393}
   - component: {fileID: 512076436453775194}
   - component: {fileID: 4631073439986041343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pelor
   m_TagString: Enemy Bullet
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 390571917538314841, guid: f512eeb3ec7e64f41a3590d1b1acb0a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -169,3 +169,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossBullet
   damage: 10
+  _speed: 8

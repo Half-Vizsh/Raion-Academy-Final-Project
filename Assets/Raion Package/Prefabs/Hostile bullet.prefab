@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4998976232198667799}
   - component: {fileID: -8534694566496276430}
   - component: {fileID: 2914101722514602131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hostile bullet
   m_TagString: Enemy Bullet
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossBullet
   damage: 10
-  _speed: 4
+  _speed: 3.5
 --- !u!58 &2914101722514602131
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -106,7 +106,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5905073972489250238}
   - component: {fileID: 3475451552394508298}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hostile bullet sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

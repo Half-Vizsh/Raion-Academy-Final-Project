@@ -47,8 +47,10 @@ MonoBehaviour:
   ShooterPrefab: {fileID: 6506338317644164475, guid: e054a60ae8026c149b705b2d3c8f8687, type: 3}
   AsteroidPrefab: {fileID: 7545399467048618252, guid: 668a86d3d8c09994b81e4f7722180796, type: 3}
   UFOSPrefab: {fileID: 5600177283299589347, guid: f861fcb343882eb4fbeb8be36ca08801, type: 3}
+  BossPrefab: {fileID: 8650049153081606044, guid: a0585464ea35b37449c961eedc83ce64, type: 3}
   SpawnInterval: 4
   NextSpawn: 0
   Ybound: 4
   currentScore: 0
+  BossSpawnPos: {fileID: 0}
   currentRound: 0

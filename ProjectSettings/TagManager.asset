@@ -8,10 +8,10 @@ TagManager:
   - Enemy Bullet
   - Obstacle
   - Wall
-  - Ground
-  - Asteroids
-  - UFO
   - Player Bullet
+  - Player Rocket
+  - Boss Spawn Pos
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -19,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Bullet
   - 
   - 
   - 
