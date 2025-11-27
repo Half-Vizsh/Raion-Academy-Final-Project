@@ -42,7 +42,6 @@ public class Enemy : MonoBehaviour
         {
             //Spawn Location
             Vector3 spawnPosition = transform.position;
-            spawnPosition.y -= 0.3f;
             GameObject bullet = Instantiate(enemyBulletPrefab, spawnPosition, Quaternion.identity);
             
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
