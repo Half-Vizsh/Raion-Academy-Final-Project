@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 5553415666824081656}
   - component: {fileID: 5991373839330956123}
   - component: {fileID: 3600045555852912455}
+  - component: {fileID: 3296055080779504120}
   m_Layer: 0
   m_Name: Player Prefabs
   m_TagString: Player
@@ -244,7 +245,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movements
   speed: 8.25
-  gameOverCanvas: {fileID: 0}
 --- !u!114 &3600045555852912455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +262,21 @@ MonoBehaviour:
   shootingPoint: {fileID: 6515127140445620616}
   maxEnergy: 500
   rocketPrefab: {fileID: 6212811876994818287, guid: a11e0398666c9104c97f6f86adba2640, type: 3}
-  currentEnergy: 0
   SkillCD: 0.75
   skillCost: 100
-  nextSkill: 0
+--- !u!114 &3296055080779504120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4934086027296063344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1682d37dee33d3469ff29140809b09b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ply_Health
+  Maxhp: 100
+  gameOverCanvas: {fileID: 0}
+  sprite: {fileID: 2982457469736453413}
+  invincibleDuration: 3
