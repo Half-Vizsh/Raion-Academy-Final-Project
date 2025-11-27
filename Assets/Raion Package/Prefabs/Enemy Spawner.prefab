@@ -50,5 +50,5 @@ MonoBehaviour:
   SpawnInterval: 4
   MediumSpawnInterval: 3
   HardSpawnInterval: 1.5
-  spawnBoundaryY: 0
-  spawnBoundaryX: 0
+  spawnBoundaryY: 9
+  spawnBoundaryX: 8

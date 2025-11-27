@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3549798015965177875}
   - component: {fileID: 650489232222656}
   - component: {fileID: 8730062149660109634}
+  - component: {fileID: -4580885685123627647}
+  - component: {fileID: -2259133271529796004}
   m_Layer: 0
   m_Name: aster-big-2
   m_TagString: Asteroids
@@ -181,3 +183,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5615524, y: 0.9751042}
   m_EdgeRadius: 0
+--- !u!114 &-4580885685123627647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7545399467048618252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4b150d1bd4d664d924de22e55dcfab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  moveSpeed: 0
+  fireRate: 2
+  enemyBulletPrefab: {fileID: 0}
+--- !u!114 &-2259133271529796004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7545399467048618252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e526a31662bcc0f46a6de3468517faa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  enemyHealth: 0
+  maxEnemyHP: 100

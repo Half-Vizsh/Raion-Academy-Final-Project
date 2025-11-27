@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 226418937081235832}
   - component: {fileID: 3634810886944736985}
   - component: {fileID: 9089013088545669706}
+  - component: {fileID: -8504509222817131895}
   m_Layer: 0
   m_Name: Enemy Prefabs
   m_TagString: Enemy
@@ -213,3 +214,17 @@ MonoBehaviour:
   moveSpeed: 3
   fireRate: 1.5
   enemyBulletPrefab: {fileID: 558546045970126989, guid: db701254b7be80045a6a7e9c4352c1ed, type: 3}
+--- !u!114 &-8504509222817131895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6506338317644164475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e526a31662bcc0f46a6de3468517faa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  enemyHealth: 0
+  maxEnemyHP: 50
