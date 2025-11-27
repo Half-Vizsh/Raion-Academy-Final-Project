@@ -629,6 +629,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4617918976952599409, guid: e7496ab1ea8b7164a9c78e1ef535ec53, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4934086027296063344, guid: e7496ab1ea8b7164a9c78e1ef535ec53, type: 3}
       propertyPath: m_Name
       value: Player Prefabs
@@ -648,6 +652,10 @@ PrefabInstance:
     - target: {fileID: 5264430331227741719, guid: e7496ab1ea8b7164a9c78e1ef535ec53, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.096
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991373839330956123, guid: e7496ab1ea8b7164a9c78e1ef535ec53, type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5991373839330956123, guid: e7496ab1ea8b7164a9c78e1ef535ec53, type: 3}
       propertyPath: gameOverCanvas
