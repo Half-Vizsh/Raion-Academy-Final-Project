@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6222520691740726319}
   - component: {fileID: 4998976232198667799}
   - component: {fileID: 4658003535310926238}
-  - component: {fileID: 9092296690225883326}
+  - component: {fileID: -8534694566496276430}
   m_Layer: 0
   m_Name: Hostile bullet
   m_TagString: Enemy Bullet
@@ -166,7 +166,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.01, y: 0.06}
   m_EdgeRadius: 0
---- !u!114 &9092296690225883326
+--- !u!114 &-8534694566496276430
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,8 +175,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 558546045970126989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccfb98f9500e5de4594424b6ea67c438, type: 3}
+  m_Script: {fileID: 11500000, guid: 19111b79348d12149bf7ea73b5551f79, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  direction: {x: 0, y: 0, z: 0}
-  speed: 10
+  m_EditorClassIdentifier: Assembly-CSharp::BossBullet
+  damage: 10

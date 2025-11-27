@@ -214,3 +214,4 @@ MonoBehaviour:
   bulRb: {fileID: 2975593317809266985}
   lifeTime: 3
   energyPerBullet: 10
+  damage: 10

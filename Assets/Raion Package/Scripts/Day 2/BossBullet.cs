@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BossBullet : MonoBehaviour
 {
+    public float damage;
     private Vector3 _direction = Vector3.left;
     private float _speed = 8f;
     private float _lifetime = 5f;

@@ -6,6 +6,7 @@ public class Ply_Bullet : MonoBehaviour
     [SerializeField] Rigidbody2D bulRb;
     [SerializeField] float lifeTime;
     [SerializeField] float energyPerBullet;
+    [SerializeField] int damage;    
     private GameObject playerScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,6 +26,7 @@ public class Ply_Bullet : MonoBehaviour
         {
             if (playerScript == null) playerScript = GameObject.FindGameObjectWithTag("Player");
             playerScript.GetComponent<Ply_Shoot>().gainEnergy(energyPerBullet);
+            if (other.GetComponent<Boss>()!=null)other.GetComponent<Boss>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }
