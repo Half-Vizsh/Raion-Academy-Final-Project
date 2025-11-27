@@ -5,6 +5,8 @@ public class EnemyHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public int enemyHealth;
     public int maxEnemyHP = 50;
+
+    public GameObject Explosion;
     void Start()
     {
         enemyHealth = maxEnemyHP;
@@ -31,9 +33,16 @@ public class EnemyHealth : MonoBehaviour
                 if(enemyHealth <= 0)
                 {
                     Debug.Log("Enemy destroyed! HP was: " + enemyHealth);
-                    Destroy(gameObject);
+                    ExplodeDestruction();
                 }
             }
         }
+    }
+
+    void ExplodeDestruction()
+    {
+        Instantiate(Explosion, transform.position,Quaternion.identity);
+
+        Destroy(gameObject);
     }   
 }
