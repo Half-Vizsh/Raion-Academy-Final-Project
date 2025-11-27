@@ -137,6 +137,7 @@ public class Boss : MonoBehaviour
     void Die()
     {
         // efek / anim bisa kamu tambahkan di sini
+        ScoreSystem.ScoreValue += 1000;
         Destroy(gameObject);
     }
 }
