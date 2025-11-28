@@ -19,12 +19,6 @@ public class EnemyHealth : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Collision detected with: " + collision.gameObject.name + " (Tag: " + collision.gameObject.tag + ")");
-        
-        // if(collision.gameObject.CompareTag("Player")){
-        //     Destroy(gameObject);
-        //     return;
-        // }
-
         if (collision.gameObject.CompareTag("Player Bullet"))
         {
             Ply_Bullet bullet = collision.gameObject.GetComponent<Ply_Bullet>();
@@ -37,6 +31,7 @@ public class EnemyHealth : MonoBehaviour
                 {
                     ScoreSystem.ScoreValue += enemyScoreValue;
                     Debug.Log("Enemy destroyed! HP was: " + enemyHealth);
+                    ExplodeDestruction();
                     Destroy(gameObject);
                 }
             }

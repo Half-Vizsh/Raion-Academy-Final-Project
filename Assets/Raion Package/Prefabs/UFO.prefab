@@ -200,23 +200,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.18593335, y: 0.08103314}
   m_EdgeRadius: 0
---- !u!114 &4841901364456996395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5600177283299589347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc4b150d1bd4d664d924de22e55dcfab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  moveSpeed: 3
-  fireRate: 2
-  enemyBulletPrefab: {fileID: 4523073156335428177, guid: 2aef56071fb0cad49986710c88709fd4, type: 3}
-  SfxShoot: {fileID: 8300000, guid: 3c53ebf750f1c4f2495d6e9e64971e3b, type: 3}
-  ShootVolume: 0.7
 --- !u!114 &261571022324822876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,14 +212,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e526a31662bcc0f46a6de3468517faa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  enemyHealth: 0
-  maxEnemyHP: 150
-  ExplosionSound: {fileID: 8300000, guid: a161527766be241efad062d931d302c5, type: 3}
-  ExplosionVolume: 1
-  Explosion: {fileID: 6968493364149351119, guid: 30f4c67f935f4c6409ef4fc165213a7c, type: 3}
   enemyScoreValue: 20
   enemyHealth: 1
   maxEnemyHP: 100
+  ExplosionSound: {fileID: 8300000, guid: a161527766be241efad062d931d302c5, type: 3}
+  ExplosionVolume: 1
+  Explosion: {fileID: 6968493364149351119, guid: 30f4c67f935f4c6409ef4fc165213a7c, type: 3}
 --- !u!114 &5550373051197250470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,6 +234,8 @@ MonoBehaviour:
   moveSpeed: 1.5
   fireRate: 3
   enemyBulletPrefab: {fileID: 4523073156335428177, guid: 2aef56071fb0cad49986710c88709fd4, type: 3}
+  ShootingSound: {fileID: 8300000, guid: 033b1daf4512444018111f90f909d172, type: 3}
+  ShootingVolume: 0.35
 --- !u!70 &5976672738433179336
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

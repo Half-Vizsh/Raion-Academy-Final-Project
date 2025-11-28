@@ -156,6 +156,8 @@ MonoBehaviour:
   moveSpeed: 3
   fireRate: 2
   enemyBulletPrefab: {fileID: 0}
+  SfxShoot: {fileID: 0}
+  ShootVolume: 0.7
   enemyAnim: {fileID: 0}
 --- !u!50 &650489232222656
 Rigidbody2D:
@@ -245,6 +247,8 @@ MonoBehaviour:
   moveSpeed: 0
   fireRate: 2
   enemyBulletPrefab: {fileID: 0}
+  SfxShoot: {fileID: 0}
+  ShootVolume: 0.7
   enemyAnim: {fileID: 0}
 --- !u!114 &-2259133271529796004
 MonoBehaviour:
@@ -258,6 +262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e526a31662bcc0f46a6de3468517faa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  enemyScoreValue: 0
+  enemyHealth: 0
+  maxEnemyHP: 50
   ExplosionSound: {fileID: 8300000, guid: a161527766be241efad062d931d302c5, type: 3}
   ExplosionVolume: 1
-  Explosion: {fileID: 6968493364149351119, guid: 30f4c67f935f4c6409ef4fc165213a7c, type: 3}
+  Explosion: {fileID: 0}

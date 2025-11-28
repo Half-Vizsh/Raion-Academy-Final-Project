@@ -123,6 +123,9 @@ MonoBehaviour:
   rocketSpeed: 10
   lifeTime: 5
   damage: 30
+  ExplosionPrefab: {fileID: 6968493364149351119, guid: 30f4c67f935f4c6409ef4fc165213a7c, type: 3}
+  ContactSound: {fileID: 8300000, guid: a073e98bbb0ab4accad92296df54d326, type: 3}
+  ShootingVolume: 0.7
 --- !u!1 &7707187876598442756
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +204,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -3321410463429169472, guid: 84d8336f218602b478c458cf96b169c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

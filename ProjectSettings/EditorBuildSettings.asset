@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 0b15cb15817d5c94d99973328b75a2a4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Day 2.unity
     guid: 279c5d1474291f84aadaf87e9206795b
+  - enabled: 0
+    path: Assets/Scenes/Hafizh Testing.unity
+    guid: 52c40f687a74dbe46ae98c30246215ec
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

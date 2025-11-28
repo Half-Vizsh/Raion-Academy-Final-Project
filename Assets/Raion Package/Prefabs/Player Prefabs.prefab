@@ -334,9 +334,10 @@ MonoBehaviour:
   rocketPrefab: {fileID: 6212811876994818287, guid: a11e0398666c9104c97f6f86adba2640, type: 3}
   SkillCD: 0.75
   skillCost: 100
+  SkillIcon: {fileID: 0}
   shootSound: {fileID: 8300000, guid: 85437f0b017b54f3a9c380c5d27c5c0b, type: 3}
   skillSound: {fileID: 8300000, guid: 9c948aea551b94d95a15c3334ba83cd8, type: 3}
-  shootVolume: 0.5
+  shootVolume: 0.15
   skillVolume: 0.7
 --- !u!114 &3296055080779504120
 MonoBehaviour:
@@ -355,3 +356,6 @@ MonoBehaviour:
   sprite: {fileID: 2982457469736453413}
   invincibleDuration: 3
   healthBar: {fileID: 0}
+  ExplosionSound: {fileID: 8300000, guid: 3532cdd0d03ef40a9960ec71c769f220, type: 3}
+  ExplosionVolume: 0.2
+  Explosion: {fileID: 6968493364149351119, guid: 30f4c67f935f4c6409ef4fc165213a7c, type: 3}

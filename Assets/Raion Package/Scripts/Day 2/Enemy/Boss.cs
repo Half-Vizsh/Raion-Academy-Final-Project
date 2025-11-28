@@ -13,6 +13,10 @@ public class Boss : MonoBehaviour
     [Header("Timing")]
     public float patternInterval = 1.8f;  // jeda antar pola
     public float baseFireRate = 0.12f;    // dasar delay antar peluru di pola
+    [Header("FX")]
+    [SerializeField] AudioClip ShootingSound;
+    [SerializeField] float ShootingVolume = 0.7f;
+     private AudioSource audioSource;
 
     [Header("Stats")]
     [SerializeField] float MaxHealth;
@@ -21,6 +25,12 @@ public class Boss : MonoBehaviour
     [SerializeField] float IntroSpeed; //Gerak pas intro
     public bool isInvincible = true;
     private BossUI ui;
+    [Header("Outro")]
+    [SerializeField] AudioClip ExplosionSound;
+    [SerializeField] float ExplosionVolume = 0.7f;
+    public GameObject Explosion;
+    public GameObject gameOver;
+    public GameObject gameOverCanvas;
 
     void Start()
     {
@@ -31,7 +41,17 @@ public class Boss : MonoBehaviour
             var p = GameObject.FindGameObjectWithTag("Player");
             if (p != null) playerTransform = p.transform;
         }
+        //Audio
+         // Tambahkan AudioSource component secara otomatis jika belum ada
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
         StartCoroutine(BehaviorLoop());
+        //Game Over
+        gameOver =  GameObject.Find("GameOver");
+        if (gameOver != null) Debug.Log ("Got it");
     }
     void Update()
     {
@@ -70,6 +90,7 @@ public class Boss : MonoBehaviour
         float t = 0f;
         while (t < duration)
         {
+            audioSource.PlayOneShot(ShootingSound, ShootingVolume);
             SpawnBullet(Vector2.left, 10f);
             t += baseFireRate;
             yield return new WaitForSeconds(baseFireRate);
@@ -79,8 +100,10 @@ public class Boss : MonoBehaviour
     IEnumerator PatternSpread(float duration)
     {
         float t = 0f;
+        audioSource.PlayOneShot(ShootingSound, ShootingVolume);
         while (t < duration)
         {
+            audioSource.PlayOneShot(ShootingSound, ShootingVolume);
             int count = 5;
             float spreadAngle = 40f;
             for (int i = 0; i < count; i++)
@@ -101,6 +124,7 @@ public class Boss : MonoBehaviour
         float step = 15f;
         while (t < duration)
         {
+            audioSource.PlayOneShot(ShootingSound, ShootingVolume);
             Vector3 dir = Quaternion.Euler(0, 0, angle) * Vector3.left;
             SpawnBullet(dir, 8f);
             angle += step;
@@ -114,6 +138,7 @@ public class Boss : MonoBehaviour
         float t = 0f;
         while (t < duration)
         {
+            audioSource.PlayOneShot(ShootingSound, ShootingVolume);
             if (playerTransform != null)
             {
                 Vector3 toPlayer = (playerTransform.position - fireOrigin.position).normalized;
@@ -159,10 +184,28 @@ public class Boss : MonoBehaviour
         // if (ui != null) ui.UpdateHealth(currentHealth, MaxHealth);
         if (ui != null) ui.bossHealthBar.fillAmount = currentHealth/MaxHealth;
     }
-
+    public void BossDefeated()
+    {
+        if (gameOverCanvas != null)
+            gameOverCanvas.SetActive(true);
+    }    
     void Die()
     {
-        // efek / anim bisa kamu tambahkan di sini
+        BossDefeated();
+        if (gameOver!= null)
+        {
+            gameOver.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        if (Explosion != null)
+        {
+            Instantiate(Explosion, transform.position, Quaternion.identity);
+        }
+
+        if (ExplosionSound != null)
+        {
+            AudioSource.PlayClipAtPoint(ExplosionSound, transform.position, ExplosionVolume);
+        }
         ScoreSystem.ScoreValue += 1000;
         Destroy(gameObject);
     }

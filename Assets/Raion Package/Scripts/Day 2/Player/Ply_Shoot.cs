@@ -1,5 +1,6 @@
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ply_Shoot : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Ply_Shoot : MonoBehaviour
     [SerializeField] float SkillCD;
     [SerializeField] float skillCost;
     private float nextSkill;
+    [SerializeField] Image SkillIcon; 
     
     [Header("Audio")]
     [SerializeField] AudioClip shootSound;
@@ -60,6 +62,7 @@ public class Ply_Shoot : MonoBehaviour
         // Skill
         if (currentEnergy >= skillCost && Time.time >= nextSkill)
         {
+            SkillIcon.enabled = enabled;
             if (Input.GetButtonDown("Fire2"))
             {
                 Instantiate(rocketPrefab, shootingPoint.position, quaternion.identity);
@@ -73,7 +76,7 @@ public class Ply_Shoot : MonoBehaviour
                 currentEnergy -= skillCost;
                 nextSkill = Time.time + SkillCD;
             }
-        }
+        } else SkillIcon.enabled = !enabled;
     }
     
     public void gainEnergy(float energy)

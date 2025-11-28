@@ -13,6 +13,10 @@ public class Ply_Health : MonoBehaviour
     private float currenthp;
     private bool isInvincible;
     public UnityEngine.UI.Image healthBar;
+    [Header("Effect When Die")]
+    [SerializeField] AudioClip ExplosionSound;
+    [SerializeField] float ExplosionVolume = 0.7f;
+    public GameObject Explosion;
 
     void Start()
     {
@@ -43,9 +47,11 @@ public class Ply_Health : MonoBehaviour
         StartCoroutine(PlayerDamageEffect());
         if (currenthp<=0)
         {
+            ExplodeDestruction();
              if (gameOverCanvas != null)
             {
                 //Turn object on
+                Time.timeScale = 0f;
                 gameOverCanvas.SetActive(true);
             }
             ScoreSystem.ScoreValue = 0;
@@ -75,4 +81,20 @@ public class Ply_Health : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         isInvincible = false;
     }
+        void ExplodeDestruction()
+        {
+        // Spawn explosion effect
+        if (Explosion != null)
+        {
+            Instantiate(Explosion, transform.position, Quaternion.identity);
+        }
+
+        if (ExplosionSound != null)
+        {
+            AudioSource.PlayClipAtPoint(ExplosionSound, transform.position, ExplosionVolume);
+        }
+
+        // Destroy enemy
+        Destroy(gameObject);
+        }
 }

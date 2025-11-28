@@ -13,6 +13,10 @@ public class Emy_UfoShoots : MonoBehaviour
     private int facing = 1;
     public GameObject enemyBulletPrefab;
     private Rigidbody2D rb;
+    [Header("Sound")]
+    [SerializeField] AudioClip ShootingSound;
+    [SerializeField] float ShootingVolume = 0.7f;
+     private AudioSource audioSource;
     void Update()
     {
         transform.Translate(Vector3.left * Time.deltaTime*moveSpeed);
@@ -36,6 +40,13 @@ public class Emy_UfoShoots : MonoBehaviour
         {
             sr.flipX = (facing == 1);
         }
+        //Audio
+         // Tambahkan AudioSource component secara otomatis jika belum ada
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     void Shoot()
@@ -46,7 +57,7 @@ public class Emy_UfoShoots : MonoBehaviour
             Vector3 spawnPosition = transform.position;
             GameObject bullet = Instantiate(enemyBulletPrefab, spawnPosition, Quaternion.identity);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-
+             audioSource.PlayOneShot(ShootingSound, ShootingVolume);
             if (rb != null)
             {
                 rb.linearVelocity = Vector3.left * 10f;

@@ -421,7 +421,12 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   patternInterval: 1.8
   baseFireRate: 0.12
-  MaxHealth: 1000
+  ShootingSound: {fileID: 8300000, guid: 033b1daf4512444018111f90f909d172, type: 3}
+  ShootingVolume: 0.2
+  MaxHealth: 1500
   currentHealth: 0
   IntroSpeed: 0.925
   isInvincible: 1
+  ExplosionSound: {fileID: 8300000, guid: 3532cdd0d03ef40a9960ec71c769f220, type: 3}
+  ExplosionVolume: 0.7
+  Explosion: {fileID: 6968493364149351119, guid: 30f4c67f935f4c6409ef4fc165213a7c, type: 3}

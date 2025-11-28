@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("Day 2");
+        SceneManager.LoadSceneAsync("Hafizh Testing");
     }
     
     public void QuitGame()

@@ -23,6 +23,7 @@ public class Emy_Spawner : MonoBehaviour
     public int currentRound;
     [Header("For Intro")]
     public BossUI bossUI;
+    public GameObject gameOverUI;
 
     void Start()
     {
@@ -45,6 +46,7 @@ public class Emy_Spawner : MonoBehaviour
             Boss boss = bossObj.GetComponent<Boss>();
             boss.AssignUI(bossUI);
             bossUI.Show();
+            boss.gameOverCanvas = gameOverUI;
             bossCanSpawn = false;
             } 
         }
@@ -56,7 +58,7 @@ public class Emy_Spawner : MonoBehaviour
         } else if (currentScore>=50&&bossCanSpawn)
         {
             currentRound = 2;
-            SpawnInterval = 1.5f;
+            SpawnInterval = 1.1f;
         } else if (bossCanSpawn)
         {
             currentRound = 1;
