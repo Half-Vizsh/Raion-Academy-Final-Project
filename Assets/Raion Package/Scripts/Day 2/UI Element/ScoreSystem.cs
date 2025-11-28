@@ -7,16 +7,17 @@ using UnityEngine.UI;
 public class ScoreSystem : MonoBehaviour
 {
     public static int ScoreValue = 0;
+    public static int RoundValue = 0;
     public TextMeshProUGUI Score;
     // Start is called before the first frame update
     void Start()
     {
-        Score = GetComponent<TextMeshProUGUI >();
+        Score = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Score.text = "Score: " + ScoreValue;
+        Score.text = "Score: " + ScoreValue+"\nWave: "+RoundValue;
     }
 }

@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int enemyScoreValue;
     public int enemyHealth;
     public int maxEnemyHP = 50;
 
@@ -17,12 +19,11 @@ public class EnemyHealth : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Collision detected with: " + collision.gameObject.name + " (Tag: " + collision.gameObject.tag + ")");
-
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            ExplodeDestruction();
-            return;
-        }
+        
+        // if(collision.gameObject.CompareTag("Player")){
+        //     Destroy(gameObject);
+        //     return;
+        // }
 
         if (collision.gameObject.CompareTag("Player Bullet"))
         {
@@ -34,6 +35,23 @@ public class EnemyHealth : MonoBehaviour
 
                 if (enemyHealth <= 0)
                 {
+                    ScoreSystem.ScoreValue += enemyScoreValue;
+                    Debug.Log("Enemy destroyed! HP was: " + enemyHealth);
+                    Destroy(gameObject);
+                }
+            }
+        }
+         if (collision.gameObject.CompareTag("Player Rocket"))
+        {
+            Ply_Rocket rocket = collision.gameObject.GetComponent<Ply_Rocket>();
+            if(rocket != null)
+            {
+                enemyHealth -= rocket.damage;
+                Debug.Log("Damage = " + rocket.damage + ", Enemy HP = " + enemyHealth);
+                
+                if(enemyHealth <= 0)
+                {
+                    ScoreSystem.ScoreValue += enemyScoreValue;
                     Debug.Log("Enemy destroyed! HP was: " + enemyHealth);
                     ExplodeDestruction();
                 }

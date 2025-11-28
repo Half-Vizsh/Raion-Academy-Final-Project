@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] AudioClip SfxShoot;
     [SerializeField] float ShootVolume = 0.7f;
+    [SerializeField] Animator enemyAnim;
     void Update()
     {
         transform.Translate(Vector3.left * Time.deltaTime*moveSpeed);
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        enemyAnim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         float yRot = transform.eulerAngles.y;
         if (Mathf.Approximately(Mathf.DeltaAngle(yRot, 180f), 0f) || transform.localScale.x < 0f) facing = -1;
@@ -48,9 +50,7 @@ public class Enemy : MonoBehaviour
             }
             //Spawn Location
             Vector3 spawnPosition = transform.position;
-            spawnPosition.y -= 0.3f;
             GameObject bullet = Instantiate(enemyBulletPrefab, spawnPosition, Quaternion.identity);
-            
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
             if (rb != null)
