@@ -244,7 +244,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movements
   speed: 8.25
-  gameOverCanvas: {fileID: 0}
 --- !u!114 &3600045555852912455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +261,9 @@ MonoBehaviour:
   shootingPoint: {fileID: 6515127140445620616}
   maxEnergy: 500
   rocketPrefab: {fileID: 6212811876994818287, guid: a11e0398666c9104c97f6f86adba2640, type: 3}
-  currentEnergy: 0
   SkillCD: 0.75
   skillCost: 100
-  nextSkill: 0
+  shootSound: {fileID: 8300000, guid: 85437f0b017b54f3a9c380c5d27c5c0b, type: 3}
+  skillSound: {fileID: 0}
+  shootVolume: 0.5
+  skillVolume: 0.7
