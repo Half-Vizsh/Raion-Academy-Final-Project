@@ -1,6 +1,8 @@
 using System.Collections;
+using Microsoft.Unity.VisualStudio.Editor;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ply_Health : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class Ply_Health : MonoBehaviour
     [SerializeField] float invincibleDuration;
     private float currenthp;
     private bool isInvincible;
+    public UnityEngine.UI.Image healthBar;
 
     void Start()
     {
@@ -27,12 +30,16 @@ public class Ply_Health : MonoBehaviour
         {
             takingDamage(collision.GetComponent<BossBullet>().damage);
         }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            takingDamage(5f);
+        }
     }
     public void takingDamage(float amount)
     {
         if (isInvincible) return;
-
         currenthp -= amount;
+        healthBar.fillAmount = currenthp/Maxhp;
         StartCoroutine(PlayerDamageEffect());
         if (currenthp<=0)
         {

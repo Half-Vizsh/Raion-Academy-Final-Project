@@ -54,3 +54,4 @@ MonoBehaviour:
   currentScore: 0
   BossSpawnPos: {fileID: 0}
   currentRound: 0
+  bossUI: {fileID: 0}

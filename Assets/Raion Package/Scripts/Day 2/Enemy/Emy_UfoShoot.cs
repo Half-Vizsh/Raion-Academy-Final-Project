@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEditor.Callbacks;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Emy_UfoShoots : MonoBehaviour
 {
+    [SerializeField] float Streakinterval;
     public float moveSpeed;
     public float fireRate = 2f;
     private float fireCountdown = 0f;
@@ -11,21 +13,19 @@ public class Enemy : MonoBehaviour
     private int facing = 1;
     public GameObject enemyBulletPrefab;
     private Rigidbody2D rb;
-    [SerializeField] Animator enemyAnim;
     void Update()
     {
         transform.Translate(Vector3.left * Time.deltaTime*moveSpeed);
         fireCountdown += Time.deltaTime;
         if (fireCountdown >= fireRate)
         {
-            Shoot();
+            StartCoroutine("ShootingStreak");
             fireCountdown = 0;
         }
     }
 
     void Start()
     {
-        enemyAnim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         float yRot = transform.eulerAngles.y;
         if (Mathf.Approximately(Mathf.DeltaAngle(yRot, 180f), 0f) || transform.localScale.x < 0f) facing = -1;
@@ -65,5 +65,14 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    private IEnumerator ShootingStreak()
+    {
+        Shoot();
+        yield return new WaitForSeconds(Streakinterval);
+         Shoot();
+        yield return new WaitForSeconds(Streakinterval);
+         Shoot();
+        yield return new WaitForSeconds(Streakinterval);
     }
 }

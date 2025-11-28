@@ -1,4 +1,6 @@
 using System.Collections;
+using NUnit.Framework;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
@@ -13,20 +15,37 @@ public class Boss : MonoBehaviour
     public float baseFireRate = 0.12f;    // dasar delay antar peluru di pola
 
     [Header("Stats")]
-    public int health = 100;
+    [SerializeField] float MaxHealth;
+    public float currentHealth = 100;
+    [Header("Intro")]
+    [SerializeField] float IntroSpeed; //Gerak pas intro
+    public bool isInvincible = true;
+    private BossUI ui;
 
     void Start()
     {
+        currentHealth = MaxHealth;
         if (fireOrigin == null) fireOrigin = transform;
         if (playerTransform == null)
         {
             var p = GameObject.FindGameObjectWithTag("Player");
             if (p != null) playerTransform = p.transform;
         }
-
         StartCoroutine(BehaviorLoop());
     }
-
+    void Update()
+    {
+        //Small Intro
+        if (gameObject.transform.position.x > 6)
+        {
+            transform.Translate(Vector3.left * Time.deltaTime*IntroSpeed);
+            isInvincible = true;
+        }
+        else
+        {
+            isInvincible = false;
+        }
+    }
     IEnumerator BehaviorLoop()
     {
         yield return new WaitForSeconds(0.5f);
@@ -126,12 +145,19 @@ public class Boss : MonoBehaviour
             bb.Init(dir, speed, 6f);
         }
     }
+    public void AssignUI(BossUI uiRef)
+    {
+        ui = uiRef;
+    }
 
     // contoh method untuk menerima damage (panggil dari peluru player atau trigger)
     public void TakeDamage(int dmg)
     {
-        health -= dmg;
-        if (health <= 0) Die();
+        if (isInvincible) return;
+        currentHealth -= dmg;
+        if (currentHealth <= 0) Die();
+        // if (ui != null) ui.UpdateHealth(currentHealth, MaxHealth);
+        if (ui != null) ui.bossHealthBar.fillAmount = currentHealth/MaxHealth;
     }
 
     void Die()

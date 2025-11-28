@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619843523228422152}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.63318855, y: 0.63318855, z: 0.63318855}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6829246073312327192}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &4014441782766957304
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: 8aeb9e233fbb8f14db39770841b78b94, type: 3}
+  m_Sprite: {fileID: 1435521033, guid: c6e0acd00825c8a448afe76365e5662b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,8 +101,9 @@ GameObject:
   - component: {fileID: 6829246073312327192}
   - component: {fileID: 8337559276186604615}
   - component: {fileID: 773875609323187678}
-  - component: {fileID: 4841901364456996395}
   - component: {fileID: 261571022324822876}
+  - component: {fileID: 5550373051197250470}
+  - component: {fileID: 5976672738433179336}
   m_Layer: 0
   m_Name: UFO
   m_TagString: Enemy
@@ -119,8 +120,8 @@ Transform:
   m_GameObject: {fileID: 5600177283299589347}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.2197, y: -2.5044, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: 6.2197, y: -2.5023, z: 0}
+  m_LocalScale: {x: 4.3788, y: 4.3788, z: 4.3788}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8439251355125834536}
@@ -187,7 +188,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.06088601, y: -0.00007969141}
+  m_Offset: {x: -0.0030229092, y: 0.00096199475}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -197,23 +198,8 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.27278534, y: 0.47782934}
+  m_Size: {x: 0.18593335, y: 0.08103314}
   m_EdgeRadius: 0
---- !u!114 &4841901364456996395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5600177283299589347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc4b150d1bd4d664d924de22e55dcfab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  moveSpeed: 1.5
-  fireRate: 2
-  enemyBulletPrefab: {fileID: 4523073156335428177, guid: 2aef56071fb0cad49986710c88709fd4, type: 3}
 --- !u!114 &261571022324822876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,3 +215,56 @@ MonoBehaviour:
   enemyScoreValue: 20
   enemyHealth: 1
   maxEnemyHP: 100
+--- !u!114 &5550373051197250470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5600177283299589347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44adbd41309177409261f5538815150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Emy_UfoShoots
+  Streakinterval: 0.25
+  moveSpeed: 1.5
+  fireRate: 3
+  enemyBulletPrefab: {fileID: 4523073156335428177, guid: 2aef56071fb0cad49986710c88709fd4, type: 3}
+--- !u!70 &5976672738433179336
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5600177283299589347}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.00845872, y: -0.0010339748}
+  m_Size: {x: 0.09542112, y: 0.2039505}
+  m_Direction: 0

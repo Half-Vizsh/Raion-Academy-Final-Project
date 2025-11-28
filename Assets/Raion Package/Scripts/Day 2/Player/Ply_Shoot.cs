@@ -15,7 +15,6 @@ public class Ply_Shoot : MonoBehaviour
     [SerializeField] float SkillCD;
     [SerializeField] float skillCost; // and this
     private float nextSkill;
-    // Update is called once per frame
     void Update()
     {
         //Shooting

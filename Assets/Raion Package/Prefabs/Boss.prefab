@@ -421,4 +421,7 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   patternInterval: 1.8
   baseFireRate: 0.12
-  health: 1000
+  MaxHealth: 1000
+  currentHealth: 0
+  IntroSpeed: 0.925
+  isInvincible: 1

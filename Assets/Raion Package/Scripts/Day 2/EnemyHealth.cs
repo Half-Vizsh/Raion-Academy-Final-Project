@@ -16,10 +16,10 @@ public class EnemyHealth : MonoBehaviour
     {
         Debug.Log("Collision detected with: " + collision.gameObject.name + " (Tag: " + collision.gameObject.tag + ")");
         
-        if(collision.gameObject.CompareTag("Player")){
-            Destroy(gameObject);
-            return;
-        }
+        // if(collision.gameObject.CompareTag("Player")){
+        //     Destroy(gameObject);
+        //     return;
+        // }
 
         if (collision.gameObject.CompareTag("Player Bullet"))
         {

@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300026, guid: 1bd6c74c058d5f143a391104c445e845, type: 3}
+  m_Sprite: {fileID: 21300032, guid: 1bd6c74c058d5f143a391104c445e845, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -156,6 +156,7 @@ MonoBehaviour:
   moveSpeed: 3
   fireRate: 2
   enemyBulletPrefab: {fileID: 0}
+  enemyAnim: {fileID: 0}
 --- !u!50 &650489232222656
 Rigidbody2D:
   serializedVersion: 5
@@ -217,7 +218,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0006276667, y: -0.0059303045}
+  m_Offset: {x: -0.0027678013, y: 0.0025578886}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -227,7 +228,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.2633474, y: 0.9751042}
+  m_Size: {x: 0.8627069, y: 0.6932976}
   m_EdgeRadius: 0
 --- !u!114 &-4580885685123627647
 MonoBehaviour:
@@ -244,6 +245,7 @@ MonoBehaviour:
   moveSpeed: 0
   fireRate: 2
   enemyBulletPrefab: {fileID: 0}
+  enemyAnim: {fileID: 0}
 --- !u!114 &-2259133271529796004
 MonoBehaviour:
   m_ObjectHideFlags: 0

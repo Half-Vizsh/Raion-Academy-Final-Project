@@ -21,10 +21,14 @@ public class Emy_Spawner : MonoBehaviour
     private bool bossCanSpawn = true;
     private bool minionCanSpawn = true;
     public int currentRound;
+    [Header("For Intro")]
+    public BossUI bossUI;
+
     void Start()
     {
         //Please make an empty game object where you want to create the boss and add this tag
         if (BossSpawnPos == null) BossSpawnPos = GameObject.FindGameObjectWithTag("Boss Spawn Pos");
+        bossUI.Hide();
     }
 
     // Update is called once per frame
@@ -37,10 +41,11 @@ public class Emy_Spawner : MonoBehaviour
         {
             minionCanSpawn = false;
             if (checkExistingEnemy==null){
-            Instantiate (BossPrefab,  BossSpawnPos.transform.position, UnityEngine.Quaternion.identity);
+            GameObject bossObj = Instantiate (BossPrefab,  BossSpawnPos.transform.position, UnityEngine.Quaternion.identity);
+            Boss boss = bossObj.GetComponent<Boss>();
+            boss.AssignUI(bossUI);
+            bossUI.Show();
             bossCanSpawn = false;
-            minionCanSpawn = true;
-            SpawnInterval = 1.2f;
             } 
         }
         //Wave Manager
@@ -58,7 +63,7 @@ public class Emy_Spawner : MonoBehaviour
             SpawnInterval = 3f;
         }
         ScoreSystem.RoundValue = currentRound;
-
+        //Spawn Stuff
         if (Time.time>=NextSpawn&&minionCanSpawn)
         {
             SpawnEnemy();
