@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     private int facing = 1;
     public GameObject enemyBulletPrefab;
     private Rigidbody2D rb;
+    [SerializeField] AudioClip SfxShoot;
+    [SerializeField] float ShootVolume = 0.7f;
     void Update()
     {
         transform.Translate(Vector3.left * Time.deltaTime*moveSpeed);
@@ -40,6 +42,10 @@ public class Enemy : MonoBehaviour
     {
         if (enemyBulletPrefab != null)
         {
+            if(SfxShoot != null)
+            {
+                AudioSource.PlayClipAtPoint(SfxShoot,transform.position,ShootVolume);
+            }
             //Spawn Location
             Vector3 spawnPosition = transform.position;
             spawnPosition.y -= 0.3f;

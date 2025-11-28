@@ -212,4 +212,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyHealth: 0
   maxEnemyHP: 100
+  ExplosionSound: {fileID: 8300000, guid: a161527766be241efad062d931d302c5, type: 3}
+  ExplosionVolume: 1
   Explosion: {fileID: 6968493364149351119, guid: 30f4c67f935f4c6409ef4fc165213a7c, type: 3}

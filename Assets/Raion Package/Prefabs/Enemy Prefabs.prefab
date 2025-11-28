@@ -214,6 +214,8 @@ MonoBehaviour:
   moveSpeed: 3
   fireRate: 1.5
   enemyBulletPrefab: {fileID: 558546045970126989, guid: db701254b7be80045a6a7e9c4352c1ed, type: 3}
+  SfxShoot: {fileID: 8300000, guid: 3c53ebf750f1c4f2495d6e9e64971e3b, type: 3}
+  ShootVolume: 0.7
 --- !u!114 &-8504509222817131895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,4 +230,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyHealth: 0
   maxEnemyHP: 50
+  ExplosionSound: {fileID: 8300000, guid: a161527766be241efad062d931d302c5, type: 3}
+  ExplosionVolume: 1
   Explosion: {fileID: 6968493364149351119, guid: 30f4c67f935f4c6409ef4fc165213a7c, type: 3}

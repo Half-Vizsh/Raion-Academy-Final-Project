@@ -2,22 +2,24 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public int enemyHealth;
     public int maxEnemyHP = 50;
 
+    [SerializeField] AudioClip ExplosionSound;
+    [SerializeField] float ExplosionVolume = 0.7f;
     public GameObject Explosion;
+
     void Start()
     {
         enemyHealth = maxEnemyHP;
     }
 
-    // Update is called once per frame
     void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Collision detected with: " + collision.gameObject.name + " (Tag: " + collision.gameObject.tag + ")");
-        
-        if(collision.gameObject.CompareTag("Player")){
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
             ExplodeDestruction();
             return;
         }
@@ -25,12 +27,12 @@ public class EnemyHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("Player Bullet"))
         {
             Ply_Bullet bullet = collision.gameObject.GetComponent<Ply_Bullet>();
-            if(bullet != null)
+            if (bullet != null)
             {
                 enemyHealth -= bullet.damage;
                 Debug.Log("Damage = " + bullet.damage + ", Enemy HP = " + enemyHealth);
-                
-                if(enemyHealth <= 0)
+
+                if (enemyHealth <= 0)
                 {
                     Debug.Log("Enemy destroyed! HP was: " + enemyHealth);
                     ExplodeDestruction();
@@ -41,8 +43,18 @@ public class EnemyHealth : MonoBehaviour
 
     void ExplodeDestruction()
     {
-        Instantiate(Explosion, transform.position,Quaternion.identity);
+        // Spawn explosion effect
+        if (Explosion != null)
+        {
+            Instantiate(Explosion, transform.position, Quaternion.identity);
+        }
 
+        if (ExplosionSound != null)
+        {
+            AudioSource.PlayClipAtPoint(ExplosionSound, transform.position, ExplosionVolume);
+        }
+
+        // Destroy enemy
         Destroy(gameObject);
-    }   
+    }
 }

@@ -1,8 +1,15 @@
 fileFormatVersion: 2
 guid: a161527766be241efad062d931d302c5
+AssetOrigin:
+  serializedVersion: 1
+  productId: 113256
+  packageName: Force Field - Sci-Fi Collection
+  packageVersion: 1.0
+  assetPath: Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Break_v1a.wav
+  uploadId: 622068
 AudioImporter:
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 8
   defaultSettings:
     serializedVersion: 2
     loadType: 0
@@ -21,10 +28,3 @@ AudioImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 113256
-  packageName: Force Field - Sci-Fi Collection
-  packageVersion: 1.0
-  assetPath: Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Break_v1a.wav
-  uploadId: 622068
