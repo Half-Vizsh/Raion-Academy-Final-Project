@@ -186,8 +186,10 @@ public class Boss : MonoBehaviour
     }
     public void BossDefeated()
     {
-        if (gameOverCanvas != null)
+        if (gameOverCanvas != null){
             gameOverCanvas.SetActive(true);
+            gameOverCanvas.transform.Find("Restart").gameObject.SetActive(false);
+        }
     }    
     void Die()
     {
@@ -195,6 +197,7 @@ public class Boss : MonoBehaviour
         if (gameOver!= null)
         {
             gameOver.SetActive(true);
+            gameObject.transform.Find("Restart").gameObject.SetActive(false);
             Time.timeScale = 0f;
         }
         if (Explosion != null)
