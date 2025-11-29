@@ -1,5 +1,3 @@
-using UnityEditor.Callbacks;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour

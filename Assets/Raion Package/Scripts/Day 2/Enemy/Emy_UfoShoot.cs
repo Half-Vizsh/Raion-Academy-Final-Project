@@ -1,6 +1,4 @@
 using System.Collections;
-using UnityEditor.Callbacks;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
 public class Emy_UfoShoots : MonoBehaviour

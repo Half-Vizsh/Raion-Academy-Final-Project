@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Diagnostics;
 using Unity.Mathematics;
-using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -27,7 +26,8 @@ public class Emy_Spawner : MonoBehaviour
 
     void Start()
     {
-        //Please make an empty game object where you want to create the boss and add this tag
+        //Please make an empty game object where you want to create the boss and add this tag'
+        ScoreSystem.ScoreValue = 0;
         if (BossSpawnPos == null) BossSpawnPos = GameObject.FindGameObjectWithTag("Boss Spawn Pos");
         bossUI.Hide();
     }
@@ -49,7 +49,7 @@ public class Emy_Spawner : MonoBehaviour
             boss.gameOverCanvas = gameOverUI;
             bossCanSpawn = false;
             } 
-        }
+        } else if (currentScore<300) bossUI.Hide();
         //Wave Manager
         if (currentScore >= 150&&bossCanSpawn)
         {

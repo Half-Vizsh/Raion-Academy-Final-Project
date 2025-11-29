@@ -1,6 +1,5 @@
 using System.Collections;
 using NUnit.Framework;
-using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
@@ -34,6 +33,11 @@ public class Boss : MonoBehaviour
 
     void Start()
     {
+        //Restart Game
+        if (ScoreSystem.ScoreValue<300)
+        {
+            Destroy(gameObject);
+        }
         currentHealth = MaxHealth;
         if (fireOrigin == null) fireOrigin = transform;
         if (playerTransform == null)
@@ -188,7 +192,6 @@ public class Boss : MonoBehaviour
     {
         if (gameOverCanvas != null){
             gameOverCanvas.SetActive(true);
-            gameOverCanvas.transform.Find("Restart").gameObject.SetActive(false);
         }
     }    
     void Die()
